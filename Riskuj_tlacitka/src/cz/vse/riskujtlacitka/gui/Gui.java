@@ -14,36 +14,31 @@ import javax.swing.JFrame;
 
 public class Gui {
 
-	public Gui() {
-		super();
-		drawComponentsWithoutResolution();
-	}
-
-	public Gui(int x, int y) {
-		super();
-		initializeComponents();
-		drawComponentsToResolution(x, y);
-		mainWindow.setVisible(true);
-	}
-
-	public Gui(String s) {
-		if (s.equals("auto")) {
-			initializeComponents();
-			GraphicsDevice gd = GraphicsEnvironment
-					.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-			int x = gd.getDisplayMode().getWidth();
-			int y = gd.getDisplayMode().getHeight();
-			drawComponentsToResolution(x, y);
-			mainWindow.setVisible(true);
-		} else {
-			drawComponentsWithoutResolution();
-		}
-	}
-
+	private final int screenDivisor = 4;  
 	private JFrame mainWindow;
 	private JButton clearButton;
 	private List<JButton> ButtonList;
 	private ActionListener clearButtonListener;
+
+	public Gui() {
+		drawComponentsWithoutResolution();
+	}
+
+	public Gui(int x, int y) {
+		drawComponentsToResolution(x, y);
+	}
+
+	public Gui(String s) {
+		if (s.equals("auto")) {
+			GraphicsDevice gd = GraphicsEnvironment
+					.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+			int screenWidth = gd.getDisplayMode().getWidth();
+			int screenHeight = (gd.getDisplayMode().getHeight());
+			drawComponentsToResolution(screenWidth, screenHeight);
+		} else {
+			drawComponentsWithoutResolution();
+		}
+	}
 
 	private void initializeComponents() {
 		mainWindow = new JFrame();
@@ -89,9 +84,14 @@ public class Gui {
 		mainWindow.setVisible(true);
 	}
 
-	private void drawComponentsToResolution(int x, int y) {
+	private void drawComponentsToResolution(int screenWidth, int screenHeight) {
+		initializeComponents();
 		drawComponents();
-		mainWindow.setSize(x, y);
+		int mainWindowWidth = screenWidth;
+		int mainWindowHeight = screenHeight / screenDivisor;
+		mainWindow.setSize(mainWindowWidth, mainWindowHeight);
+		mainWindow.setLocation(0, (screenHeight - mainWindowHeight));
+		mainWindow.setVisible(true);
 	}
 
 	public void setActiveButton(int i) {
