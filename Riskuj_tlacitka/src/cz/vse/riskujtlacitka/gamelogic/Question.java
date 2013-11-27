@@ -4,11 +4,20 @@ public class Question {
 	
 	private String question;
 	private int value;
-	private boolean answered;
+	private boolean answered=false;
 	
 	public Question() {
 		question = new String();
 		
+	}
+
+	public Question(String question) {
+		this.question = question;
+	}
+
+	public Question(String question, int value) {
+		this.question = question;
+		this.value = value;
 	}
 
 	public String getQuestion() {

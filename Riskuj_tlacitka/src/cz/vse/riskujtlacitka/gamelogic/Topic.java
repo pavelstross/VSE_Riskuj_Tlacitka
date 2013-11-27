@@ -3,11 +3,24 @@ package cz.vse.riskujtlacitka.gamelogic;
 import java.util.ArrayList;
 
 public class Topic {
-
+	
+	private String topicName;
 	private java.util.List<Question> questionList;
 
 	public Topic() {
 		questionList = new ArrayList<>();
+	}
+
+	public Topic(String topicName) {
+		this.topicName = topicName;
+	}
+
+	public String getTopicName() {
+		return topicName;
+	}
+
+	public void setTopicName(String topicName) {
+		this.topicName = topicName;
 	}
 
 	public java.util.List<Question> getQuestionList() {
