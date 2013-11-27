@@ -1,15 +1,16 @@
 package cz.vse.riskujtlacitka.main;
 
-import java.awt.Color;
-
 import cz.vse.riskujtlacitka.gamelogic.GameState;
 import cz.vse.riskujtlacitka.gui.Gui;
-import cz.vse.riskujtlacitka.gui.PlayersPanelTEST;
 
 public class MainApp {
 	
 	
 	public final static String GameButtonColor = "blabla";
+	
+	
+	public final static int numberOfTopicsInGame = 2;
+	public final static int numberOfQuestionsInGame = 2;
 	
 	/**
 	 * @param args

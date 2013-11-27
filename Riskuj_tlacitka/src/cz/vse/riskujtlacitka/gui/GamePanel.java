@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import cz.vse.riskujtlacitka.gamelogic.GameState;
+import cz.vse.riskujtlacitka.main.MainApp;
 
 public class GamePanel extends JPanel {
 
@@ -17,26 +18,25 @@ public class GamePanel extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private List<JButton> playerButtonList;
+	private List<JButton> gameButtonList;
 	private GameState gameState;
 
 	public GamePanel(GameState gameState, int width, int height) {
 		this.gameState = gameState;
-		this.setLayout(new GridLayout(gameState
-				.getTopics(), gameState.getQuestions()));
-		playerButtonList = new ArrayList<JButton>();
-		for (int i = 0; i < (gameState.getQuestions()*gameState.getTopics()); i++) {
-			playerButtonList.add(new JButton("Test"));
+		this.setLayout(new GridLayout(MainApp.numberOfTopicsInGame, MainApp.numberOfQuestionsInGame));
+		gameButtonList = new ArrayList<JButton>();
+		for (int i = 0; i < (MainApp.numberOfQuestionsInGame * MainApp.numberOfTopicsInGame); i++) {
+			gameButtonList.add(new JButton("Test"));
 		}
-		for (JButton button : playerButtonList) {
+		for (JButton button : gameButtonList) {
 			button.setBackground(Color.BLUE);
-			button.setPreferredSize(new Dimension((width/gameState.getQuestions()),height/gameState.getTopics()));
+			button.setPreferredSize(new Dimension((width / MainApp.numberOfQuestionsInGame), height / MainApp.numberOfTopicsInGame));
 			this.add(button);
 		}
 
 	}
 
 	public void update() {
-		System.out.println(gameState.getQuestions());
+		System.out.println("UPDATED");
 	}
 }

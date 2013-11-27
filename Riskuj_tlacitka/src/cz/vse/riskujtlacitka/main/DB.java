@@ -25,7 +25,7 @@ public class DB {
 		topic = new Topic("Topic B");
 		topic.addQuestion(new Question("Otazka1 topic B"));
 		topic.addQuestion(new Question("Otazka2 topic B"));
-		topics.add(topic);		
+		topics.add(topic);	
 	}
 	
 	
