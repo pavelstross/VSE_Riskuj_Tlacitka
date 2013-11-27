@@ -10,6 +10,10 @@ import cz.vse.riskujtlacitka.gamelogic.GameState;
 
 public class Gui extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private final int screenDivisor = 4;
 	private PlayersPanel playersPanel;
 	private GameState gameState;

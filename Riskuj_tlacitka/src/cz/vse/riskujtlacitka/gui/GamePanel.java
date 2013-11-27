@@ -13,6 +13,10 @@ import cz.vse.riskujtlacitka.gamelogic.GameState;
 
 public class GamePanel extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private List<JButton> playerButtonList;
 	private GameState gameState;
 
