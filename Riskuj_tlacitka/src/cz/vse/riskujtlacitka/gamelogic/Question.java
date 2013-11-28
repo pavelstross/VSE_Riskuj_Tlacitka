@@ -2,30 +2,30 @@ package cz.vse.riskujtlacitka.gamelogic;
 
 public class Question {
 	
-	private String question;
+	private String questionText;
 	private int value;
 	private boolean answered=false;
 	
 	public Question() {
-		question = new String();
+		questionText = new String();
 		
 	}
 
-	public Question(String question) {
-		this.question = question;
+	public Question(String questionText) {
+		this.questionText = questionText;
 	}
 
 	public Question(String question, int value) {
-		this.question = question;
+		this.questionText = question;
 		this.value = value;
 	}
 
-	public String getQuestion() {
-		return question;
+	public String getQuestionText() {
+		return questionText;
 	}
 
-	public void setQuestion(String question) {
-		this.question = question;
+	public void setQuestionText(String question) {
+		this.questionText = question;
 	}
 
 	public int getValue() {

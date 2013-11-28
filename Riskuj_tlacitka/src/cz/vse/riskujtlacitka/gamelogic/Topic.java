@@ -13,6 +13,7 @@ public class Topic {
 
 	public Topic(String topicName) {
 		this.topicName = topicName;
+		questionList = new ArrayList<>();
 	}
 
 	public String getTopicName() {

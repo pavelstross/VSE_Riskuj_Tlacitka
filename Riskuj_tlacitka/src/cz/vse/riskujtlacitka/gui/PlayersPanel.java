@@ -18,10 +18,10 @@ public class PlayersPanel extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private List<JButton> playerButtonList;
-	private GameState gameLogic;
+	private GameState gameState;
 
-	public PlayersPanel(GameState gameLogic, int width, int height) {
-		this.gameLogic = gameLogic;
+	public PlayersPanel(GameState gameState, int width, int height) {
+		this.gameState = gameState;
 		this.setLayout(new GridLayout(1, 8));
 
 		playerButtonList = new ArrayList<JButton>();
